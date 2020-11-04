@@ -1,0 +1,3 @@
+gmx grompp -f sp.mdp -c dimer.gro -p modified.top -o test.tpr
+gmx trjconv -f dimer.gro -s test.tpr -o test.gro
+Notice that test.gro has renamed the middle C to CZ (this proves correct atom identification)

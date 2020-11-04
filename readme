@@ -1,0 +1,22 @@
+# Calculating tyr-tyr interactions
+# Follow this readme and all subsequet readme files -ajay
+
+# First,i extracted the 2 protein chains
+gmx make_ndx -f Tyrosine.gro
+gmx trjconv -f Tyrosine.gro -o dimer.gro -n index.ndx
+
+# then createed standalone topology (original.top - same as trp11.itp but easier to modify)
+# edited original.top -> modified.top 
+# make nrexcl very high (this makes intramoleculars zero - both lj and couloumb)
+# make mainchain lj (sig and eps) and partial charges zero for mainchain atoms
+# i had to rename one C to CZ to achieve this
+# the resulting modified.top will evaluate only the required interaction energies
+
+#Check atoms are identified correctly after renaming
+see atom_change_check/readme
+
+#Check if intramoleculars are zeroed out -
+see single_chain_E_check/readme
+
+#Calculate (tyrosine-tyrosine only)
+see final_files/readme

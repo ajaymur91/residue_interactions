@@ -1,0 +1,7 @@
+#include "amber14sb_OL15.ff/forcefield.itp"
+#include "TYR11.itp"
+[ system ]
+dimer_gp
+
+[ molecules ]
+TYR11	2

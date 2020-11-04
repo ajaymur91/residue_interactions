@@ -1,0 +1,5 @@
+# Calculate interaction energy 
+gmx grompp -f sp.mdp -c dimer.gro -p modified.top -o modified.tpr
+gmx mdrun -deffnm modified -rerun dimer.gro 
+gmx energy -f modified.edr -o modified_e.xvg
+

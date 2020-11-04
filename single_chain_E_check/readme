@@ -1,0 +1,4 @@
+   gmx grompp -f sp.mdp -c 1chain.gro -p modified.top -o 1chain.tpr
+   gmx mdrun -deffnm 1chain -rerun 1chain.gro 
+   gmx energy -f 1chain.edr -o 1chain_e.xvg
+   notice all intramoleculars are zero as expected- nrexcl was set to 50
